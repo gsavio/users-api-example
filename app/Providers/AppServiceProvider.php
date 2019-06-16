@@ -13,8 +13,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Use Brazilian datas for Faker
+        $this->app->singleton(\Faker\Generator::class, function () {
+            return \Faker\Factory::create('pt_BR');
+        });
     }
+
 
     /**
      * Bootstrap any application services.
