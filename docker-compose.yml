@@ -1,4 +1,4 @@
-# project-join-us
+# users-api
 
 
 # compose syntax version.
@@ -12,10 +12,10 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=project-join-us
-      - MYSQL_USER=project-join-us
-      - MYSQL_PASSWORD=project-join-us
-      - MYSQL_DATABASE=project-join-us
+      - MYSQL_ROOT_PASSWORD=users-api
+      - MYSQL_USER=users-api
+      - MYSQL_PASSWORD=users-api
+      - MYSQL_DATABASE=users-api
     ports:
       - target: 3306
         published: 3306

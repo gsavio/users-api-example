@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use \App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -19,7 +18,7 @@ class UserController extends Controller
         $users = new User;
         
         if($users->all()->isEmpty()) {
-            return response()->json(['error' => 'No registered users']);
+            return response()->json(['response' => 'No registered users']);
         }
         
         return response()->json($users->all());

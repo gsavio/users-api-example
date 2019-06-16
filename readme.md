@@ -5,15 +5,15 @@ A simple API REST for users administration
 ## References
     
 * [Instalation](#installation)
-    
-    API Usage
+* [API Usage](#api-usage)
     * [Show all users](#show-all-users)
     * [Show user](#show-user)
     * [Create user](#create-user)
     * [Edit user](#edit-user)
     * [Delete user](#delete-user)
+* [Running tests](#running-test)
 
-## Installation
+# Installation
 Run the composer to install laravel and dependencies
 ```console
 $ composer install
@@ -35,9 +35,10 @@ There is even a docker-compose file. You must have docker and docker-compose ins
 $ docker-compose up -d
 ```
 
-If you want to use docker, configure the .env file according to `docker-compose` or vice versa.
+If you want to use docker, configure the .env file according to `docker-compose` or copy the `.env-docker.example` file and rename to `.env`.
 
----
+
+# API usage
 
 ## Show all users
 
@@ -67,11 +68,11 @@ Return a json list of all users registered
 
 * **Success Response**
     * Code: `200`<br />
-    Content: `[{"id":1,"name":"John Doe","age":61,"email":"johndoe@example.com","phone":"(99) 99999-9999","city":"Porto Guilherme","state":"CE","created_at":"2019-06-16 02:47:53","updated_at":"2019-06-16 02:47:53"}]`
+    Content: `[{"id":1,"name":"John Doe","age":61,"email":"johndoe@example.com","phone":"(99) 99999-9999","city":"City Name","state":"AA","created_at":"YYYY-MM-DD HH:MM:SS","updated_at":"YYYY-MM-DD HH:MM:SS"}]`
 
 * **Error Response**
     * Code: `200` <br />
-    Content: `{"error":"No registered users"}`
+    Content: `{"response":"No registered users"}`
 ---
 
 ## Show user
@@ -216,3 +217,17 @@ Return json about a single user
 * **Error Response**
     * Code: `404` <br />
     Content: `{"error": "User not found"}`
+
+# Running tests
+
+To run tests if you're using docker, you need to start the command line using `docker-compose exec web` followed by comando you need, eg.:
+
+```console
+$ docker-compose exec web vendor/bin/phpunit
+```
+
+If you don't, to run the 2 tests written run this command: 
+
+```console
+$ vendor/bin/phpunit
+```
