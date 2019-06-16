@@ -17,7 +17,11 @@ class UserController extends Controller
     */
     public function index() {
         $users = new User;
-
+        
+        if($users->all()->isEmpty()) {
+            return response()->json(['error' => 'No registered users']);
+        }
+        
         return response()->json($users->all());
     }
 
@@ -33,7 +37,7 @@ class UserController extends Controller
         $userData = $user->find($id);
         
         if(is_null($userData)) {
-            return response()->json(['error' => 'User data not found'], 204);
+            return response()->json(['error' => 'User not found'], 404);
         }
 
         return response()->json($userData);
@@ -98,6 +102,6 @@ class UserController extends Controller
             return response()->json(['response' => 'User deleted']);
         }
 
-        return response()->json(['reponse' => 'User not found'], 404);
+        return response()->json(['error' => 'User not found'], 404);
     }
 }
