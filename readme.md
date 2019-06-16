@@ -4,14 +4,16 @@ A simple API REST for users administration
 
 ## References
     
-- [Instalation](#installation)
-* [Show all users](#show-all-users)
-* [Show user](#show-user)
-* [Create user](#create-user)
-* [Edit user](#edit-user)
-* [Delete user](#delete-user)
+* [Instalation](#installation)
+    
+    API Usage
+    * [Show all users](#show-all-users)
+    * [Show user](#show-user)
+    * [Create user](#create-user)
+    * [Edit user](#edit-user)
+    * [Delete user](#delete-user)
 
-## Instalation
+## Installation
 Run the composer to install laravel and dependencies
 ```console
 $ composer install
@@ -34,6 +36,8 @@ $ docker-compose up -d
 ```
 
 If you want to use docker, configure the .env file according to `docker-compose` or vice versa.
+
+---
 
 ## Show all users
 
